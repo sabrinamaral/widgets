@@ -1,5 +1,6 @@
 import React from "react";
 import Accordion from "./components/Accordion";
+import Button from "./components/Button";
 
 const items = [
   {
@@ -18,7 +19,20 @@ const items = [
 const App = () => {
   return (
     <div>
-      <Accordion items={items} />
+      <div>
+        <Button primary rounded>
+          hello there
+        </Button>
+      </div>
+      <div>
+        <Button>buy now</Button>
+      </div>
+      <div>
+        <Button>something</Button>
+      </div>
+      <div>
+        <Button>click me</Button>
+      </div>
     </div>
   );
 };
