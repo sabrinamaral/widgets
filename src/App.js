@@ -1,4 +1,10 @@
 import React from "react";
+import { AiOutlineStar, AiOutlineCloud } from "react-icons/ai";
+import { GoBell } from "react-icons/go";
+import { DiDatabase } from "react-icons/di";
+import { BsHandbag } from "react-icons/bs";
+import { TbHandClick } from "react-icons/tb";
+
 import Accordion from "./components/Accordion";
 import Button from "./components/Button";
 
@@ -20,18 +26,39 @@ const App = () => {
   return (
     <div>
       <div>
-        <Button primary rounded>
+        <Button>
+          <AiOutlineStar /> hello there
+        </Button>
+      </div>
+      <div>
+        <Button primary outline>
+          <GoBell />
           hello there
         </Button>
       </div>
       <div>
-        <Button>buy now</Button>
+        <Button secondary rounded>
+          <BsHandbag />
+          buy now
+        </Button>
       </div>
       <div>
-        <Button>something</Button>
+        <Button warning>
+          <AiOutlineCloud />
+          something
+        </Button>
       </div>
       <div>
-        <Button>click me</Button>
+        <Button success>
+          <TbHandClick />
+          click me
+        </Button>
+      </div>
+      <div>
+        <Button danger>
+          <DiDatabase />
+          data
+        </Button>
       </div>
     </div>
   );
