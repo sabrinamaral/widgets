@@ -1,30 +1,20 @@
-import Accordion from "./components/Accordion";
+import { useState } from "react";
+import DropDown from "./components/DropDown";
 
 const App = () => {
-  const items = [
-    {
-      id: "hjk32k",
-      title: "What is React?",
-      content:
-        "React is a front end javascript framework.React is a front end javascript framework.React is a front end javascript framework.React is a front end javascript framework.",
-    },
-    {
-      id: "jfh45hj6",
-      title: "Why use React?",
-      content:
-        "React is a favorite JS library among engineers.React is a favorite JS library among engineers.React is a favorite JS library among engineers.React is a favorite JS library among engineers.",
-    },
-    {
-      id: "nm78nmj5",
-      title: "How do you use React?",
-      content:
-        "You use React by creating components.You use React by creating components.You use React by creating components.",
-    },
+  const [selected, setSelected] = useState(null);
+  const handleSelect = (option) => {
+    setSelected(option);
+  };
+
+  const options = [
+    { label: "Red", value: "red" },
+    { label: "Green", value: "green" },
+    { label: "Blue", value: "blue" },
   ];
+
   return (
-    <div>
-      <Accordion items={items} />
-    </div>
+    <DropDown options={options} onChange={handleSelect} value={selected} />
   );
 };
 
