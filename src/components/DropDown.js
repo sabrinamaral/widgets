@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { GoChevronDown } from "react-icons/go";
 import Panel from "./Panel";
 
-const DropDown = ({ options, onChange, value }) => {
+const Dropdown = ({ options, onChange, value }) => {
   const [isOpen, setIsOpen] = useState(false);
   const element = useRef();
 
@@ -53,4 +53,4 @@ const DropDown = ({ options, onChange, value }) => {
   );
 };
 
-export default DropDown;
+export default Dropdown;
