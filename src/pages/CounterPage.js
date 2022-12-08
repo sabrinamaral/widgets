@@ -3,7 +3,9 @@ import Panel from "../components/Panel";
 import Button from "../components/Button";
 
 const INCREMENT_COUNT = "increment";
+const DECREMENT_COUNT = "decrement";
 const SET_VALUE_TO_ADD = "change_value_to_add";
+const ADD_VALUE_TO_COUNT = "add_value_to_count";
 
 const CounterPage = ({ initialCount }) => {
   // const [count, setCount] = useState(initialCount);
@@ -14,6 +16,14 @@ const CounterPage = ({ initialCount }) => {
         return { ...state, count: state.count + 1 };
       case SET_VALUE_TO_ADD:
         return { ...state, addValue: action.payload };
+      case DECREMENT_COUNT:
+        return { ...state, count: state.count - 1 };
+      case ADD_VALUE_TO_COUNT:
+        return {
+          ...state,
+          count: state.count + state.addValue,
+          addValue: 0,
+        };
       default:
         return state;
     }
@@ -30,7 +40,9 @@ const CounterPage = ({ initialCount }) => {
     dispatch({ type: INCREMENT_COUNT });
   };
   const decrement = () => {
-    // setCount(count - 1);
+    dispatch({
+      type: DECREMENT_COUNT,
+    });
   };
   const handleChange = (e) => {
     const value = parseInt(e.target.value) || 0;
@@ -41,8 +53,7 @@ const CounterPage = ({ initialCount }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setCount(count + addValue);
-    // setAddValue(0);
+    dispatch({ type: ADD_VALUE_TO_COUNT });
   };
 
   return (
